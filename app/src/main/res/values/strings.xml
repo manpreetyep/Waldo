@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Waldo</string>
+    <string name="project">Projects</string>
+    <string name="my_profile">My Profile</string>
+    <string name="logout">Log Out</string>
+    <string name="title_activity_maps">Map</string>
+</resources>

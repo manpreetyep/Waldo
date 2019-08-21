@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@mipmap/background_splash"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:background="#88FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            android:id="@+id/title"
+            layout="@layout/title_layout"/>
+        <android.support.v7.widget.RecyclerView
+            android:layout_below="@id/title"
+            android:id="@+id/tasks_rv"
+            tools:listitem="@layout/complete_task_adapter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

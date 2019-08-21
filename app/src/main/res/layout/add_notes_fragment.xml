@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@mipmap/background_splash"
+    android:layout_height="match_parent">
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            android:id="@+id/title"
+            layout="@layout/title_layout"/>
+        <LinearLayout
+            android:weightSum="100"
+            android:orientation="vertical"
+            android:layout_below="@id/title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/white"
+                android:layout_weight="90"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <EditText
+                    android:gravity="top"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:background="@null"
+                    android:id="@+id/ed_notes"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </EditText>
+
+            </LinearLayout>
+            <LinearLayout
+                android:background="@android:color/white"
+                android:weightSum="100"
+                android:orientation="horizontal"
+                android:layout_weight="10"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+                <LinearLayout
+                    android:id="@+id/save_layout"
+                    android:layout_margin="1.5dp"
+                    android:background="@color/blue"
+                    android:layout_width="0dp"
+                    android:gravity="center"
+                    android:layout_weight="50"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:textSize="18sp"
+                        android:textColor="@android:color/white"
+                        android:text="Save"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/cancel_layout"
+                    android:layout_margin="1.5dp"
+                    android:background="@color/title_bar"
+                    android:layout_width="0dp"
+                    android:gravity="center"
+                    android:layout_weight="50"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:textSize="18sp"
+                        android:textColor="@android:color/white"
+                        android:text="Cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>
