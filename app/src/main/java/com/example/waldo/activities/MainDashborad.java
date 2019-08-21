@@ -80,15 +80,16 @@ public class MainDashborad extends AppCompatActivity{
             launchFragment(new ProfileFragment());
         }else if(view == logout_layout){
             AlertDialog.Builder builder = new AlertDialog.Builder(MainDashborad.this);
-            builder.setMessage("Are you sure ?");
-            builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+            builder.setTitle("Waldo");
+            builder.setMessage("Do you want to Log out ?");
+            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     dialogInterface.dismiss();
                     startActivity(new Intent(MainDashborad.this,LoginActivity.class));
                 }
             });
-            builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
 

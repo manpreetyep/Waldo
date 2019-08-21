@@ -23,6 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.waldo.R;
+import com.example.waldo.Utils.SessionManager;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -48,6 +49,7 @@ public class ProfileFragment extends Fragment {
 
     @BindView(R.id.layout_mydocument)
     LinearLayout layout_mydocument;
+    SessionManager sessionManager;
 
     private Unbinder unbinder;
 
@@ -56,6 +58,7 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.home_fragment,container,false);
         unbinder = ButterKnife.bind(this, view);
+        sessionManager = new SessionManager(getActivity());
         Window window = getActivity().getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
@@ -78,8 +81,10 @@ public class ProfileFragment extends Fragment {
         if(view == layout_mydocument){
             launchFragment(new MyDocumentFragment());
         }else if(view == layout_upload_image){
+            sessionManager.setCategoryName("");
             launchFragment(new ImageVideoFragment());
         }else if(view == layout_view_add_notes){
+            sessionManager.setCategoryName("");
             launchFragment(new ViewAddNotesFragment());
         }else if(view == mail_text){
             Intent intent = new Intent(Intent.ACTION_MAIN);

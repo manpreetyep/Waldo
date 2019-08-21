@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -24,6 +25,7 @@ import android.widget.TextView;
 
 
 import com.example.waldo.R;
+import com.example.waldo.Utils.SessionManager;
 import com.example.waldo.activities.LoginActivity;
 import com.example.waldo.activities.MainDashborad;
 import com.example.waldo.adapter.CompleteTaskAdapter;
@@ -46,13 +48,16 @@ public class MapFragment extends Fragment {
     TextView back_button;
 
     private Unbinder unbinder;
+    SessionManager sessionManager;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.map_fragment,container,false);
         unbinder = ButterKnife.bind(this, view);
+        sessionManager = new SessionManager(getActivity());
         init();
         return view;
     }
@@ -63,6 +68,7 @@ public class MapFragment extends Fragment {
             getFragmentManager().beginTransaction().detach(this).attach(this).commit();
         }
     }
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void init(){
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -78,14 +84,26 @@ public class MapFragment extends Fragment {
         Window window = getActivity().getWindow();
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.green));
+
+        if(sessionManager.getCategoryName().equalsIgnoreCase("complete")){
+            window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.light_green));
+            toolbar.setBackgroundColor(getActivity().getResources().getColor(R.color.green));
+
+            toolbar_tittle.setText("71 Archibald Road ,kelson kelton");
+        }
+        else if(sessionManager.getCategoryName().equalsIgnoreCase("pending")){
+            window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.title_light_blue));
+            toolbar.setBackgroundColor(getActivity().getResources().getColor(R.color.blue));
+
+            toolbar_tittle.setText("71 Archibald Road ,kelson kelton");
+        }
+        else if(sessionManager.getCategoryName().equalsIgnoreCase("working")){
+            window.setStatusBarColor(ContextCompat.getColor(getActivity(),R.color.light_title_bar));
+            toolbar.setBackgroundColor(getActivity().getResources().getColor(R.color.title_bar));
+
+            toolbar_tittle.setText("71 Archibald Road ,kelson kelton");
         }
 
-
-       // MapFragment mapFragment = (MapFragment) getActivity().getFragmentManager().findFragmentById(R.id.view_map);
-
-        toolbar.setBackgroundColor(getActivity().getResources().getColor(R.color.green));
         toolbar_tittle.setText("71 Archibald Road, kelton");
 
     }

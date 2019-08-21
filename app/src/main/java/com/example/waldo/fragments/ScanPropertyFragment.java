@@ -88,7 +88,7 @@ public class ScanPropertyFragment extends Fragment implements SurfaceHolder.Call
        // MapFragment mapFragment = (MapFragment) getActivity().getFragmentManager().findFragmentById(R.id.view_map);
 
         toolbar.setBackgroundColor(getActivity().getResources().getColor(R.color.title_bar));
-        toolbar_tittle.setText("scan a property");
+        toolbar_tittle.setText("Scan Property");
 
     }
 
