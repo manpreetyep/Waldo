@@ -2,17 +2,14 @@ package com.example.waldo.activities;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.waldo.R;
-import com.example.waldo.fragments.AddNotesFragment;
-import com.example.waldo.fragments.ViewAddNotesFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -1,38 +1,37 @@
 package com.example.waldo.adapter;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.example.waldo.R;
-import com.example.waldo.fragments.TaskDetailFragment;
+import com.example.waldo.models.PropertyModel;
 
-import butterknife.ButterKnife;
+import java.util.ArrayList;
 
 public class CompleteTaskAdapter extends RecyclerView.Adapter<CompleteTaskAdapter.Holder> {
 
    Context context;
    ClickItem clickItem;
+    ArrayList<PropertyModel> list;
 
     public interface ClickItem{
-        void click();
+        void click(int p);
     }
 
     public void clickListerner(ClickItem clickItem){
         this.clickItem= clickItem;
     }
 
-    public CompleteTaskAdapter(Context context) {
+    public CompleteTaskAdapter(Context context,ArrayList<PropertyModel> list) {
         this.context = context;
+        this.list = list;
     }
 
     @NonNull
@@ -44,12 +43,18 @@ public class CompleteTaskAdapter extends RecyclerView.Adapter<CompleteTaskAdapte
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int i) {
+        holder.txt_title.setText(list.get(i).site_name);
+        holder.txt_des.setText(list.get(i).address);
         holder.item_click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AppCompatActivity activity = (AppCompatActivity) v.getContext();
-                Fragment myFragment = new TaskDetailFragment();
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, myFragment).addToBackStack(null).commit();
+
+                if(clickItem!=null){
+                    clickItem.click(i);
+                }
+//                AppCompatActivity activity = (AppCompatActivity) v.getContext();
+//                Fragment myFragment = new TaskDetailFragment();
+//                activity.getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, myFragment).addToBackStack(null).commit();
 
             }
         });
@@ -57,17 +62,20 @@ public class CompleteTaskAdapter extends RecyclerView.Adapter<CompleteTaskAdapte
 
     @Override
     public int getItemCount() {
-        return 10;
+        return list.size();
     }
 
     class Holder extends RecyclerView.ViewHolder{
 
       LinearLayout item_click;
+      TextView txt_title,txt_des;
 
       public Holder(@NonNull View itemView) {
           super(itemView);
 
           item_click = itemView.findViewById(R.id.item_click);
+          txt_title = itemView.findViewById(R.id.txt_title);
+          txt_des = itemView.findViewById(R.id.txt_des);
       }
   }
 }

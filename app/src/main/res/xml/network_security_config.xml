@@ -1,0 +1,12 @@
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">http://acmenviro.co.nz/api/</domain>
+    </domain-config>
+    <base-config cleartextTrafficPermitted="true"/>
+    <debug-overrides>
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </debug-overrides>
+</network-security-config>
