@@ -14,22 +14,89 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
+                android:singleLine="true"
+                android:id="@+id/txt_property"
                 android:textSize="16sp"
                 android:text="Waldo"
                 android:textColor="@android:color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/txt_addess"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="50dp"
-                android:gravity="center"
-                android:textSize="16sp"
-                android:text=""
-                android:textColor="@android:color/black"
+            <LinearLayout
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="16sp"
+                    android:text="Time in : "
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/txt_time_in"
+                    android:textSize="16sp"
+                    android:text=" 09/17/19 12:00"
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="16sp"
+                    android:text="Time out : "
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/txt_time_out"
+                    android:textSize="16sp"
+                    android:text=" 09/17/19 12:00"
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="16sp"
+                    android:text="Total time on site : "
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/txt_total_time"
+                    android:textSize="16sp"
+                    android:text=" 0hr 7min"
+                    android:textColor="@android:color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+
+
 
             <LinearLayout
                 android:visibility="visible"
@@ -77,33 +144,6 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:visibility="gone"
-                android:id="@+id/single_button_lay"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:layout_marginRight="50dp"
-                    android:layout_width="match_parent"
-                    android:layout_marginLeft="50dp"
-
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:id="@+id/txt_ok"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:textColor="@android:color/white"
-                        android:background="@color/green"
-                        android:gravity="center"
-                        android:text="@string/ok"
-                        android:textAllCaps="true"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                </LinearLayout>
-
-            </LinearLayout>
 
         </LinearLayout>
 

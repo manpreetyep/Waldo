@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        layout="@layout/title_layout_with_button"/>
+
+    <LinearLayout
+        android:background="@mipmap/background_splash"
+        android:weightSum="100"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_weight="85"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <ScrollView
+                android:layout_weight="85"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:background="@drawable/login_edit"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+
+                            android:layout_margin="5dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/user"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp" />
+                        <EditText
+                            android:textSize="14sp"
+                            android:id="@+id/ed_ownername"
+                            android:textColorHint="@android:color/white"
+                            android:textColor="@android:color/white"
+                            android:singleLine="true"
+                            android:hint="Owner Name"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@null"
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:background="@drawable/login_edit"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+
+                            android:layout_margin="5dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/phone"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp" />
+                        <EditText
+                            android:inputType="number"
+                            android:digits="0123456789"
+                            android:textSize="14sp"
+                            android:id="@+id/ed_ownerphone"
+                            android:textColorHint="@android:color/white"
+                            android:textColor="@android:color/white"
+                            android:singleLine="true"
+                            android:hint="Owner Phone"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@null"
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:background="@drawable/login_edit"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+
+                            android:layout_margin="5dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/email_"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp" />
+                        <EditText
+                            android:textSize="14sp"
+                            android:id="@+id/ed_owneremail"
+                            android:textColorHint="@android:color/white"
+                            android:textColor="@android:color/white"
+                            android:singleLine="true"
+                            android:hint="Owner Email"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@null"
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:background="@drawable/login_edit"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+
+                            android:layout_margin="5dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/propert"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp" />
+                        <EditText
+                            android:textSize="14sp"
+                            android:id="@+id/ed_site_name"
+                            android:textColorHint="@android:color/white"
+                            android:textColor="@android:color/white"
+                            android:singleLine="true"
+                            android:hint="Site Name"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@null"
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:background="@drawable/login_edit"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+
+                            android:layout_margin="5dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/location"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp" />
+                        <EditText
+                            android:editable="false"
+                            android:focusable="false"
+                            android:textSize="14sp"
+                            android:id="@+id/ed_address"
+                            android:textColorHint="@android:color/white"
+                            android:textColor="@android:color/white"
+                            android:singleLine="true"
+                            android:hint="Address"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@null"
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:background="@drawable/login_edit"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+
+                            android:layout_margin="5dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/zip"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp" />
+                        <EditText
+                            android:inputType="number"
+                            android:digits="0123456789"
+                            android:textSize="14sp"
+                            android:id="@+id/ed_zip_code"
+                            android:textColorHint="@android:color/white"
+                            android:textColor="@android:color/white"
+                            android:singleLine="true"
+                            android:hint="Zip Code"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@null"
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:background="@drawable/login_edit"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+
+                            android:layout_margin="5dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/city_"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp" />
+                        <EditText
+                            android:textSize="14sp"
+                            android:id="@+id/ed_city"
+                            android:textColorHint="@android:color/white"
+                            android:textColor="@android:color/white"
+                            android:singleLine="true"
+                            android:hint="City"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@null"
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:background="@drawable/login_edit"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+
+                            android:layout_margin="5dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/country_"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp" />
+                        <EditText
+                            android:focusable="false"
+                            android:editable="false"
+                            android:textSize="14sp"
+                            android:id="@+id/ed_country"
+                            android:textColorHint="@android:color/white"
+                            android:textColor="@android:color/white"
+                            android:singleLine="true"
+                            android:hint="Country"
+                            android:text="New Zealand"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@null"
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+
+
+
+
+
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="15"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/txt_continue"
+                        android:layout_margin="1dp"
+                        android:background="@color/blue"
+                        android:textSize="16sp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:textColor="@android:color/white"
+                        android:gravity="center"
+                        android:text="Continue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -5,6 +5,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 
 import com.example.waldo.Splash;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 
 public class SessionManager {
 
@@ -26,6 +31,8 @@ public class SessionManager {
     private static final String USER_TYPE = "user_type";
     private static final String PROPERTY_ID = "property_id";
     private static final String PROPERTY_Address = "property_address";
+    private static final String FORM_LIST = "form_list";
+    private static final String DESCRIPTION_LIST = "form_list";
 
     public SessionManager(Context context) {
         this.context = context;
@@ -149,5 +156,38 @@ public class SessionManager {
     public String getPropertyAddress() {
         return sharedPreferences.getString(PROPERTY_Address, "");
     }
+
+    public void saveFormArr(ArrayList<String> list) {
+        Gson gson = new Gson();
+        String json = gson.toJson(list);
+        editor.putString(FORM_LIST, json);
+        editor.apply();     // This line is IMPORTANT !!!
+
+    }
+    public ArrayList<String> getFormArr()
+    {
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString(FORM_LIST, null);
+        Type type = new TypeToken<ArrayList<String>>() {}.getType();
+        return gson.fromJson(json, type);
+
+    }
+
+    public void saveDescriptionArr(ArrayList<String> list) {
+        Gson gson = new Gson();
+        String json = gson.toJson(list);
+        editor.putString(DESCRIPTION_LIST, json);
+        editor.apply();     // This line is IMPORTANT !!!
+
+    }
+    public ArrayList<String> getDescriptionArr()
+    {
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString(DESCRIPTION_LIST, null);
+        Type type = new TypeToken<ArrayList<String>>() {}.getType();
+        return gson.fromJson(json, type);
+
+    }
+
 
 }

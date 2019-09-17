@@ -84,6 +84,21 @@ public interface ApiInterFace {
                                          @Field("description") String description
                                          );
 
+    @FormUrlEncoded
+    @POST("api/startlog")
+    Call<ResponseBody> startlog(@Field("user_id") String user_id,
+                                        @Field("propID") String propID,
+                                         @Field("start_date") String start_date
+                                         );
+
+    @FormUrlEncoded
+    @POST("api/endlog")
+    Call<ResponseBody> endlog(@Field("user_id") String user_id,
+                                @Field("propID") String propID,
+                                @Field("end_date") String end_date,
+                                @Field("log_id") String log_id
+    );
+
     @Multipart
     @POST("Api/profileImageupload")
     Call<ResponseBody> profileImageupload(@Part MultipartBody.Part image,
@@ -115,11 +130,17 @@ public interface ApiInterFace {
     @POST("Api/Api/editDescription")
     Call<ResponseBody> editDescription(@Body RequestBody jsonObject);
 
+    @POST("api/addNewProperty")
+    Call<ResponseBody> addNewProperty(@Body RequestBody jsonObject);
+
     @GET
     Call<ResponseBody> editDescription(@Url String userUrl);
 
     @GET
     Call<ResponseBody> getpropertyDetail(@Url String userUrl);
+
+    @GET
+    Call<ResponseBody> getPropertyData(@Url String userUrl);
 
 
     @GET

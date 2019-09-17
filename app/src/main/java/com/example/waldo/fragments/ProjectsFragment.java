@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,6 +57,9 @@ public class ProjectsFragment extends Fragment {
     @BindView(R.id.txt_working_count)
     TextView txt_working_count;
 
+    @BindView(R.id.add_new_click)
+    RelativeLayout add_new_click;
+
     Unbinder unbinder;
     SessionManager sessionManager;
     ProgressDialog progressDialog;
@@ -84,7 +88,7 @@ public class ProjectsFragment extends Fragment {
         }
     }
 
-    @OnClick ({R.id.layout_completed,R.id.layout_pending,R.id.layout_working})
+    @OnClick ({R.id.layout_completed,R.id.layout_pending,R.id.layout_working,R.id.add_new_click})
      void clickAction(View view){
         if(view == layout_completed){
             sessionManager.setCategoryName("complete");
@@ -95,6 +99,9 @@ public class ProjectsFragment extends Fragment {
         }else if(view == layout_working){
             sessionManager.setCategoryName("working");
             launchFragment(new WorkingFragment());
+        }else if(view == add_new_click){
+            //sessionManager.setCategoryName("working");
+            launchFragment(new AddNewProperty());
         }
 
     }

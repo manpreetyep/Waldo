@@ -48,6 +48,7 @@
                 />
 
             <RelativeLayout
+                android:id="@+id/add_new_click"
                 android:layout_marginRight="10dp"
                 android:orientation="horizontal"
                 android:layout_alignParentRight="true"

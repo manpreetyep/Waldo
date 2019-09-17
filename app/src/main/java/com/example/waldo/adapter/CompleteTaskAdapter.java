@@ -78,4 +78,9 @@ public class CompleteTaskAdapter extends RecyclerView.Adapter<CompleteTaskAdapte
           txt_des = itemView.findViewById(R.id.txt_des);
       }
   }
+
+    public  void setFilter(ArrayList<PropertyModel> FilteredDataList) {
+        list = FilteredDataList;
+        notifyDataSetChanged();
+    }
 }

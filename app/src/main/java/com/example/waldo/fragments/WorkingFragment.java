@@ -12,12 +12,16 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
+
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +40,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -55,6 +60,9 @@ public class WorkingFragment extends Fragment {
 
     @BindView(R.id.tasks_rv)
     RecyclerView tasks_rv;
+
+    @BindView(R.id.ed_search)
+    EditText ed_search;
 
     LinearLayoutManager manager;
     private Unbinder unbinder;
@@ -106,7 +114,38 @@ public class WorkingFragment extends Fragment {
                 sessionManager.setPropertyAddress(list.get(p).site_name);
                 launchFragment(new TaskDetailFragment());
             }
+        }); ed_search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                filter(s.toString());
+            }
         });
+    }
+    void filter(String text){
+        ArrayList<PropertyModel> list1 = new ArrayList();
+        for(PropertyModel d: list){
+            //or use .equal(text) with you want equal match
+            //use .toLowerCase() for better matches
+            if(d.site_name.toLowerCase().contains(text.toLowerCase())){
+                list1.add(d);
+            }
+        }
+        //update recyclerview
+        adapter.setFilter(list1);
+    }
+    @OnClick({R.id.add_new_click})
+    void onClick(View v){
+        launchFragment(new AddNewProperty());
     }
     public void launchFragment(Fragment fragment){
         FragmentManager manager = getActivity().getSupportFragmentManager();
@@ -134,10 +173,10 @@ public class WorkingFragment extends Fragment {
         Call<ResponseBody> call=null;
         if(sessionManager.getUserType().equalsIgnoreCase("admin")){
             Log.e("properties"," admin ");
-            call = apiInterFace.propertiesAdmin(sessionManager.getId(),sessionManager.getCategoryName());
+            call = apiInterFace.propertiesAdmin(sessionManager.getId(),"WORKING");
         }else{
             Log.e("properties"," emp ");
-            call = apiInterFace.getpropertiesEmployee(sessionManager.getId(),sessionManager.getCategoryName());
+            call = apiInterFace.getpropertiesEmployee(sessionManager.getId(),"WORKING");
         }
         call.enqueue(new Callback<ResponseBody>() {
             @Override
